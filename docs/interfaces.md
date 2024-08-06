@@ -1,25 +1,31 @@
 <p align="center"><a href="https://app.papeleralamilagrosa.com.ar" target="_blank"><img src="https://app.papeleralamilagrosa.com.ar/images/logo.jpg" width="240"></a></p>
 
+<p style="text-align: right;">
+  <a href="../README.md">HOME</a>
+</p>
+
 ## Interfaces y Vistas
 El SLM poseé actualmente dos interfaces, una pública y otra privada, a las cuales se puede acceder a través de internet.
 
-##### Intefaz pública `resources/views/layouts/public.blade.php`
+##### Intefaz pública 
+`resources/views/layouts/public.blade.php`
 - **QRs:**
 Se accede a través del link embebido en los códigos QR que se obtienen al imprimir un envío. La interfaz está compuesta de un pequeño diálogo que lista los pedidos que componen ese envío. Cada uno de los elementos de esta lista poseé un formulario que permite informar sobre la entrega del pedido que representa. El usuario que accede (generalmente un chofer que tiene el QR) puede subir una imagen del remito de entrega junto a su número y marcar el pedido como entregado.
 
-##### Interfaz privada `resources/views/layouts/app.blade.php`
-Todos los usuarios registrados en el sistema pueden acceder a esta interfaz a través de la vista [dashboard](#dashboard), según el rol asignado podrán ver uno o varios módulos que le permitirán interactuar con la plataforma según sus permisos. [Ver Roles y Permisos](docs/permisos.md)
+##### Interfaz privada 
+`resources/views/layouts/app.blade.php`
+Todos los usuarios registrados en el sistema pueden acceder a esta interfaz a través de la vista [dashboard](#dashboard), según el rol asignado podrán ver uno o varios módulos que le permitirán interactuar con la plataforma según sus permisos. [Ver Roles y Permisos](permisos.md)
 
 ## Vistas
 Las vistas están compuestas de secciones generales que comprenden subsecciones y componentes, que se detallan a continuación.
 
 #### Login 
 `resources/views/auth/login.blade.php`
-Si bien esta vista es de acceso público, está diseñada para otorgar acceso a la vista privada a aquellos usuarios registrados que posean un rol habilitado. Cuando un usuario accede a esta [Ver Autenticación y Accesos](docs/autenticacion.md)
+Si bien esta vista es de acceso público, está diseñada para otorgar acceso a la vista privada a aquellos usuarios registrados que posean un rol habilitado. Cuando un usuario accede a esta [Ver Autenticación y Accesos](autenticacion.md)
 
 #### Dashboard
 `resources/views/layouts/dashboard.blade.php`
-El Dashboard
+El Dashboard es la vista general de la interfaz privada. En esta vista se distribuirán todos los elementos que requieran autenticación de usuario para mostrarse. Dependiendo el rol de usuario, el Dashboard puede mostrar componentes distribuidos en uno o varios paneles.
 
 ##### Secciones
 

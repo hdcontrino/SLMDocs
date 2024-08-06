@@ -7,130 +7,34 @@ Document Version: 1.0.0
 Laravel Version: 8.83.27
 PHP Version: 7.4.33
 
-- [INTERFACES Y VISTAS](docs/interfaces.md)
-- [USUARIOS Y ROLES](docs/usuarios.md)
-- [AUTENTICACIÓN Y ACCESOS](docs/autenticacion.md)
-- [MÓDULOS DE USUARIO](docs/modulos.md)
-- [ROLES Y PERMISOS](docs/permisos.md)
+> &nbsp;
+> ÍNDICE
+> - [INTERFACES Y VISTAS](docs/interfaces.md)
+>   - [Intefaz pública](docs/interfaces.md#intefaz-pública)
+>   - [Intefaz privada](docs/interfaces.md#interfaz-privada)
+>   - [Vista Login](docs/interfaces.md#login)
+>   - [Vista Dashboard](docs/interfaces.md#dashboard)
+>   - [Secciones](docs/interfaces.md#secciones)
+>   - [Componentes](docs/interfaces.md#componentes)
+> - [USUARIOS Y ROLES](docs/usuarios.md)
+> - [AUTENTICACIÓN Y ACCESOS](docs/autenticacion.md)
+> - [MÓDULOS DE USUARIO](docs/modulos.md)
+>   - [Otros módulos](docs/modulos.md#otros-módulos)
+>   - [Acciones](docs/modulos.md#acciones)
+>       - [Acciones del módulo Pedidos](docs/orders.md#acciones)
+>       - [Acciones del módulo Agenda](docs/schedules.md#acciones)
+>       - [Acciones del módulo Envíos](docs/trips.md#acciones)
+>       - [Acciones del módulo Listas](docs/catalogs.md#acciones)
+>       - [Acciones del módulo Productos](docs/products.md#acciones)
+>       - [Acciones del módulo Usuarios](docs/users.md#acciones)
+>       - [Acciones del módulo Informes](docs/reports.md#acciones)
+> - [ROLES Y PERMISOS](docs/permisos.md)
+>   - [Módulos predeterminados](docs/permisos.md#módulos-predeterminados)
+>   - [Permisos de módulos](docs/permisos.md#permisos-de-módulos)
+>   - [Permisos de escritura y ejecución](docs/permisos.md#permisos-de-escritura-y-ejecución)
+> &nbsp;
 
 NOTA: Actualmente el SLM se encuentra optimizado únicamente para utilizarlo a través de Google Chrome.
-
-
-##### Roles de usuario existentes actualmente (roles)
-```
-[
-    {
-        "id": 1,
-        "name": "admin",
-        "singular": "Administración General",
-        "plural": "Administradores Generales",
-        "description": "Administración General",
-        "defpanel": "orders",
-        "panels": {
-            "orders": 2,
-            "schedules": 2,
-            "trips": 2,
-            "catalogs": 2,
-            "products": 2,
-            "users": 2,
-            "reports": 2
-        }
-    },
-    {
-        "id":2,
-        "name": "customer",
-        "singular": "Cliente",
-        "plural": "Clientes",
-        "description": "Usuario de tipo Cliente",
-        "defpanel": "catalogs",
-        "panels": {
-            "orders": 0,
-            "schedules": 0,
-            "trips": 0,
-            "catalogs": 2,
-            "products": 0,
-            "users": 0,
-            "reports": 0
-        }
-    },
-    {
-        "id": 3,
-        "name": "collector",
-        "singular": "Cta. Cte. y Facturación",
-        "plural": "de Cta. Cte. y Facturación",
-        "description": "Usuarios del sector de Cta. Cte. y Facturación",
-        "defpanel": "orders",
-        "panels": {
-            "orders": 2,
-            "schedules": 1,
-            "trips": 2,
-            "catalogs": 2,
-            "products": 2,
-            "users": 0,
-            "reports": 0
-        }
-    },
-    {
-        "id": 4,
-        "name": "control",
-        "singular": "Control Final",
-        "plural": "de Control Final",
-        "description": "Usuario del sector de Control Final",
-        "defpanel": "schedules",
-        "panels": {
-            "orders": 0,
-            "schedules": 1,
-            "trips": 2,
-            "catalogs": 0,
-            "products": 0,
-            "users": 0,
-            "reports": 0
-        }
-    },
-    {
-        "id": 5,
-        "name": "sales",
-        "singular": "Administración de Ventas",
-        "plural": "de Administración de Ventas",
-        "description": "Usuario del sector de Administración de Ventas",
-        "defpanel": "orders",
-        "panels": {
-            "orders": 2,
-            "schedules": 2,
-            "trips": 1,
-            "catalogs": 2,
-            "products": 2,
-            "users": 2,
-            "reports": 0
-        }
-    },
-    {
-        "id": 6,
-        "name": "depot",
-        "singular": "Depóstio y Logística de Despacho",
-        "plural": "de Depóstio y Logística de Despacho",
-        "description": "Usuario del sector de Depóstio y Logística de Despacho",
-        "defpanel": "schedules",
-        "panels": {
-            "orders": 0,
-            "schedules": 2,
-            "trips": 2,
-            "catalogs": 0,
-            "products": 0,
-            "users": 0,
-            "reports": 0
-        }
-    }
-]
-```
-##### Códigos de permisos de roles de usuario (permission)
-```
-{
-    0: "No tiene acceso al panel",
-    1: "Puede ver el panel",
-    2: "Puede ver el panel y las opciones de edición"
-}
-```
 
 ##### Equipo de desarrollo
 CDT Coheda Development Team

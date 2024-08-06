@@ -1,5 +1,9 @@
 <p align="center"><a href="https://app.papeleralamilagrosa.com.ar" target="_blank"><img src="https://app.papeleralamilagrosa.com.ar/images/logo.jpg" width="240"></a></p>
 
+<p style="text-align: right;">
+  <a href="../README.md">HOME</a>
+</p>
+
 ## Usuarios y Roles
 Además del público general que puede acceder a las vistas públicas, el SLM poseé actualmente seis roles, detallados a continuación.
 
