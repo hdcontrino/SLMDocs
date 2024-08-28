@@ -8,24 +8,40 @@
 
 #### Acciones CRUD
 ##### Crear registros
-Nombre           |Alias             |Permisos disponibles|Dependencias
---               |-                 |-                   |-
-create-new       |Crear nuevo envío |--x                 |-
-create-new-driver|Crear nuevo chofer|rwx                 |-
+Nombre            |Alias                 |Permisos disponibles|Dependencias
+--                |-                     |-                   |-
+create-new        |Crear nuevo envío     |--x                 |-
+create-new-city   |Crear nueva ciudad    |rwx                 |-
+create-new-courier|Crear nuevo transporte|rwx                 |-
+create-new-driver |Crear nuevo chofer    |rwx                 |-
 
 ##### Mostrar registros
 Nombre            |Alias          |Permisos disponibles|Dependencias
 --                |-              |-                   |-
 list-all          |Ver Todos      |r--                 |-
+list-cities       |Ver ciudades   |r--                 |-
+list-couriers     |Ver transportes|r--                 |-
 list-drivers-all  |Ver Coferes    |r--                 |-
 list-trip_status-1|Ver Preparados |r--                 |-
 list-trip_status-2|Ver En curso   |r--                 |-
 list-trip_status-3|Ver Finalizados|r--                 |-
 
 ##### Editar registros
-Nombre            |Alias          |Permisos disponibles|Dependencias
---                |-              |-                   |-
-edit-driver       |Editar chofer  |rw-                 |-
+Nombre            |Alias                 |Permisos disponibles|Dependencias
+--                |-                     |-                   |-
+edit-city         |Editar ciudad         |rw-                 |-
+edit-courier      |Editar transporte     |rw-                 |-
+edit-driver       |Editar chofer         |rw-                 |-
+parcial-delivery  |Marcar entrega parcial|-w-                 |orders.note, orders.edit
+set-delivery-note |Editar remito         |rw-                 |orders.set-delivery-note
+
+##### Eliminar registros
+Nombre        |Alias              |Permisos disponibles|Dependencias
+--            |-                  |-                   |-
+delete        |Cancelar envío     |-w-                 |-
+delete-city   |Eliminar ciudad    |-w-                 |-
+delete-courier|Eliminar transporte|-w-                 |-
+delete-driver |Eliminar chofer    |-w-                 |-
 
 #### Otras acciones
 ##### Mostrar resúmenes
@@ -46,3 +62,10 @@ show-trip-detail |Ver detalle de Envío |rwx                 |orders.list-all
 Nombre     |Alias        |Permisos disponibles|Dependencias
 --         |-            |-                   |-
 search-all |Buscar envíos|r--                 |orders.search-all
+
+##### Imprimir registros
+Nombre       |Alias                |Permisos disponibles|Dependencias
+--           |-                    |-                   |-
+print-all    |Imprimir Todos       |r-x                 |-
+print-setted |Imprimir preparados  |r-x                 |-
+print-trip   |Imprimir envío       |r-x                 |-

@@ -10,12 +10,12 @@
 ##### Crear registros
 Nombre    |Alias              |Permisos disponibles|Dependencias
 --        |-                  |-                   |-
-create-new|Crear nuevo informe|rwx                 |orders.search-order_status-1, orders.search-order_status-7, products.search-all, users.search-rol-2
+create-new|Crear nuevo informe|rwx                 |orders.search-order_status-1, orders.search-order_status-8, products.search-all, users.search-rol-2
 
 ##### Mostrar registros
-Nombre    |Alias        |Permisos disponibles|Dependencias
---        |-            |-                   |-
-list-saved|Ver Guardados|r--                 |-
+Nombre        |Alias                |Permisos disponibles|Dependencias
+--            |-                    |-                   |-
+list-saved    |Ver Guardados        |r--                 |-
 
 #### Otras acciones
 ##### Mostrar resúmenes
@@ -32,3 +32,15 @@ show-report-detail|Ver detalles de Informe|r--                 |orders.list-all,
 Nombre     |Alias          |Permisos disponibles|Dependencias
 --         |-              |-                   |-
 search-all |Buscar informes|r--                 |-
+
+##### Imprimir registros
+Nombre       |Alias                |Permisos disponibles|Dependencias
+--           |-                    |-                   |-
+print-current|Imprimir mes en curso|r-x                 |-
+print-report |Imprimir reporte     |r-x                 |-
+
+##### Acciones varias
+Nombre        |Alias                |Permisos disponibles|Dependencias
+--            |-                    |-                   |-
+export-current|Exportar mes en curso|rw-                 |reports.list-saved
+export-report |Exportar reporte     |rw-                 |reports.list-saved

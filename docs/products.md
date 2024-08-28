@@ -13,11 +13,26 @@ Nombre    |Alias               |Permisos disponibles|Dependencias
 create-new|Crear nuevo producto|rwx                 |product.search-all
 
 ##### Mostrar registros
-Nombre             |Alias           |Permisos disponibles|Dependencias
---                 |-               |-                   |-
-list-all           |Ver Todos       |r--                 |-
-list-product_type-1|Ver Artículos   |r--                 |-
-list-product_type-2|Ver Bolsones    |r--                 |-
+Nombre               |Alias              |Permisos disponibles|Dependencias
+--                   |-                  |-                   |-
+list-all             |Ver Todos          |r--                 |-
+list-product_type-1  |Ver Artículos      |r--                 |-
+list-product_type-2  |Ver Bolsones       |r--                 |-
+
+##### Editar registros
+Nombre               |Alias                        |Permisos disponibles|Dependencias
+--                   |-                            |-                   |-
+edit                 |Editar producto              |rw-                 |
+import-all           |Importar precios de productos|-wx                 |products.edit
+import-product_type-1|Importar precios de artículos|-wx                 |products.edit
+import-product_type-2|Importar precios de bolsones |-wx                 |products.edit
+set-fixed-price      |Fijar precio de producto     |rw-                 |products.edit
+set-product-prices   |Modificar precios en lote    |rw-                 |products.edit
+
+##### Eliminar registros
+Nombre     |Alias                        |Permisos disponibles|Dependencias
+--         |-                            |-                   |-
+delete     |Eliminar producto            |-w-                 |-
 
 #### Otras acciones
 ##### Mostrar resúmenes
@@ -36,3 +51,11 @@ show-product-detail|Ver detalles del producto|rw-                 |-
 Nombre     |Alias           |Permisos disponibles|Dependencias
 --         |-               |-                   |-
 search-all |Buscar productos|r--                 |-
+
+##### Acciones varias
+Nombre               |Alias              |Permisos disponibles|Dependencias
+export-all           |Exportar Productos |r--                 |-
+export-product_type-1|Exportar Artículos |r--                 |-
+export-product_type-2|Exportar Bolsones  |r--                 |-
+hide-product         |Desactivar producto|-w-                 |products.edit
+show-product         |Activar producto   |-w-                 |products.edit

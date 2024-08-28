@@ -21,25 +21,41 @@ list-history   |Ver Anteriores |r--                 |-
 list-unassigned|Ver Sin asignar|r--                 |-
 
 ##### Editar registros
-Nombre         |Alias                       |Permisos disponibles|Dependencias
---             |-                           |-                   |-
-assignment     |Añadir grupo por asignar    |rw-                 |-
-driver         |Añadir chofer a la agenda   |rw-                 |trips.list-drivers-all
-edit-driver    |Editar datos del chofer     |rw-                 |trips.edit-driver
+Nombre          |Alias                    |Permisos disponibles|Dependencias
+--              |-                        |-                   |-
+assign          |Añadir pedido            |-w-                 |schedules.update
+assign-to-trip  |Añadir pedido a un envío |-w-                 |schedules.assing
+assignment      |Añadir grupo por asignar |-w-                 |-
+driver          |Añadir chofer a la agenda|-w-                 |trips.list-drivers-all
+edit-driver     |Editar datos del chofer  |rw-                 |trips.edit-driver
+move-order      |Mover un pedido          |-w-                 |schedules.update, orders.edit
+move-trip       |Mover un envío           |-w-                 |schedules.update, trips.edit
+remove-from-trip|Preparar un envío        |-w-                 |schedules.update, trips.edit
+remove-trip     |Cancelar un envío        |-w-                 |schedules.update, trips.delete
+set-trip        |Preparar un envío        |-w-                 |trips.create-new
+send-trip       |Despachar un envío       |-w-                 |schedules.update, trips.edit
+unassign        |Desasignar un pedido     |-w-                 |schedules.update
+update          |Actualizar elemento      |-w-                 |
 
 #### Otras acciones
 ##### Mostrar detalles
-Nombre           |Alias       |Permisos disponibles|Dependencias
---               |-           |-                   |-
-show-drivers     |Ver choferes|r--                 |trips.list-drivers-all
-show-order-detail|Ver detalle |r--                 |orders.show-order-extended
+Nombre           |Alias                |Permisos disponibles|Dependencias
+--               |-                    |-                   |-
+show-drivers     |Ver choferes         |r--                 |trips.list-drivers-all
+show-order-detail|Ver detalle de pedido|r--                 |orders.show-order-extended
+show-trip-detail |Ver detalle de envío |r--                 |orders.show-order-extended
 
 ##### Buscar registros
 Nombre    |Alias           |Permisos disponibles|Dependencias
 --        |-               |-                   |-
-search-all|Buscar en agenda|r-x                 |orders.search-all
+search-all|Buscar en agenda|r-x                 |orders.search-all, trips.search-all
 
 ##### Imprimir registros
 Nombre   |Alias                  |Permisos disponibles|Dependencias
 --       |-                      |-                   |-
 print    |Imprimir agenda del día|r-x                 |orders.list-all
+
+##### Acciones varias
+Nombre     |Alias                        |Permisos disponibles|Dependencias
+--         |-                            |-                   |-
+phone-call |LLamar al teléfono del chofer|--x                 |users.list-rol-2
