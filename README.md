@@ -1,9 +1,9 @@
 <p align="center"><a href="https://app.papeleralamilagrosa.com.ar" target="_blank"><img src="https://app.papeleralamilagrosa.com.ar/images/logo.jpg" width="240"></a></p>
 
-## Sistema La Milagrosa – SLM v1.17.0
+## Sistema La Milagrosa – SLM v1.18.0
 Sistema de gestión de operación de Papelera La Milagrosa. Laravel Framework based.
 
-Document Version: 1.0.0
+Document Version: 1.0.1
 Laravel Version: 8.83.27
 PHP Version: 7.4.33
 
